@@ -99,7 +99,6 @@ export default function Navbar() {
                 { label: t("nav.home"), href: "/" },
                 { label: t("nav.features"), href: "/features" },
                 { label: t("nav.pricing"), href: "/pricing" },
-                { label: "Products", href: "/products" },
                 { label: t("nav.about"), href: "/about" },
                 { label: t("nav.service"), href: "/service" },
                 { label: t("nav.contact"), href: "/contact" },
@@ -112,7 +111,6 @@ export default function Navbar() {
             />
 
             <Dropdown label={t("nav.help")} items={[{ label: "FAQ", href: "/help/faq" }]} />
-            <Dropdown label={t("nav.blog")} items={[{ label: "All Posts", href: "/blog" }, { label: "Submit a Post", href: "/blog/submit" }]} />
             <Dropdown label={t("nav.testimonials")} items={[{ label: "All Testimonials", href: "/testimonials" }, { label: "Submit Testimonial", href: "/testimonials/submit" }]} />
             <Dropdown
               label={t("nav.legal")}
@@ -122,9 +120,6 @@ export default function Navbar() {
                 { label: t("nav.cookies"), href: "/legal/cookies" },
                 { label: t("nav.refund"), href: "/legal/refund" },
                 { label: t("nav.cancellation"), href: "/legal/cancellation" },
-                { label: t("nav.disclaimer"), href: "/legal/disclaimer" },
-                { label: "Security & Compliance", href: "/legal/security-compliance" },
-                { label: "DPA", href: "/legal/dpa" }
               ]}
             />
           </div>
@@ -163,13 +158,10 @@ export default function Navbar() {
               <Link href="/" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Home</Link>
               <Link href="/features" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Features</Link>
               <Link href="/pricing" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Pricing</Link>
-              <Link href="/products" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Products</Link>
               <Link href="/service" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Service</Link>
               <Link href="/contact" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Contact</Link>
               <Link href="/about" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>About</Link>
               <Link href="/help/faq" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>FAQ</Link>
-              <Link href="/blog" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Blog</Link>
-              <Link href="/blog/submit" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Submit a Post</Link>
               <Link href="/testimonials" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Testimonials</Link>
               <Link href="/testimonials/submit" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Submit Testimonial</Link>
               <div className="h-px my-2 w-full bg-neutral-200" />
@@ -181,9 +173,6 @@ export default function Navbar() {
               <Link href="/legal/cookies" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Cookies Policy</Link>
               <Link href="/legal/refund" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Refund Policy</Link>
               <Link href="/legal/cancellation" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Cancellation Policy</Link>
-              <Link href="/legal/disclaimer" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Disclaimer</Link>
-              <Link href="/legal/security-compliance" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Security & Compliance</Link>
-              <Link href="/legal/dpa" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>DPA</Link>
               <div className="flex items-center justify-between pt-3">
                 <div className="flex gap-2 ml-auto">
                   <Link href="/dashboard" onClick={() => setMobileOpen(false)} className="text-sm px-3 py-2 rounded-full border border-neutral-200/70 bg-white text-[#0F172A]">Dashboard</Link>

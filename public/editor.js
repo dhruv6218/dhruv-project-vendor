@@ -383,4 +383,3 @@
   
     console.log('Visual Editor initialized successfully');
   })();
-  

@@ -8,7 +8,6 @@ import FeaturesSection from "@/app/components/home/FeaturesSection";
 import VideoTestimonials from "@/app/components/home/VideoTestimonials";
 import PricingStrip from "@/app/components/home/PricingStrip";
 import HowItWorks from "@/app/components/home/HowItWorks";
-import BlogHighlight from "@/app/components/home/BlogHighlight";
 import CTABanner from "@/app/components/home/CTABanner";
 
 export default function HomeClient() {
@@ -21,7 +20,6 @@ export default function HomeClient() {
       <VideoTestimonials />
       <PricingStrip />
       <HowItWorks />
-      <BlogHighlight />
       <CTABanner />
     </motion.div>
   );

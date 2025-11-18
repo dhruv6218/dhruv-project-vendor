@@ -54,16 +54,6 @@ export default function DashboardOverview() {
         ))}
       </div>
 
-      <div className="rounded-lg border border-neutral-200/70 bg-white/80 p-3 mb-4">
-        <p className="text-sm" style={{ fontFamily: 'var(--font-geist)', fontWeight: 600 }}>{t("dashboard.quick.title")}</p>
-        <div className="mt-2 flex flex-wrap gap-2">
-          <Link href="/dashboard/verify/all-in-one" className="px-3 py-1.5 text-xs rounded-md border border-neutral-200/70">{t("dashboard.quick.new")}</Link>
-          <Link href="/dashboard/bulk-upload" className="px-3 py-1.5 text-xs rounded-md border border-neutral-200/70">{t("dashboard.quick.bulk")}</Link>
-          <Link href="/manager/invites" className="px-3 py-1.5 text-xs rounded-md border border-neutral-200/70">{t("dashboard.quick.invite")}</Link>
-          <Link href="/dashboard/reports" className="px-3 py-1.5 text-xs rounded-md border border-neutral-200/70">{t("dashboard.quick.reports")}</Link>
-        </div>
-      </div>
-
       <div>
         <p className="text-sm mb-2" style={{ fontFamily: 'var(--font-geist)', fontWeight: 600 }}>Recent activity</p>
         <DataTable<Row> columns={columns as unknown as { key: keyof Row; header: string }[]} data={data} />

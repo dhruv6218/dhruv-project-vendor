@@ -25,14 +25,10 @@ const navItems: NavItem[] = [
   { label: "Verify: DIN", href: "/dashboard/verify/din", icon: "mdi:account-badge", roles: ["user"] },
   { label: "Verify: MCA", href: "/dashboard/verify/mca", icon: "mdi:domain", roles: ["user"] },
   { label: "Verify: Bank", href: "/dashboard/verify/bank", icon: "mdi:bank", roles: ["user"] },
-  { label: "All-in-One", href: "/dashboard/verify/all-in-one", icon: "mdi:vector-combine", roles: ["user"] },
-  { label: "Bulk Upload", href: "/dashboard/bulk-upload", icon: "mdi:upload", roles: ["user"] },
   { label: "Reports", href: "/dashboard/reports", icon: "mdi:file-chart", roles: ["user"] },
   { label: "Billing", href: "/dashboard/billing", icon: "mdi:credit-card-outline", roles: ["user"] },
-  { label: "Integrations", href: "/dashboard/integrations", icon: "mdi:puzzle-outline", roles: ["user"] },
   { label: "Notifications", href: "/dashboard/notifications", icon: "mdi:bell-outline", roles: ["user"] },
   { label: "Settings", href: "/dashboard/settings", icon: "mdi:cog-outline", roles: ["user"] },
-  { label: "Support", href: "/dashboard/support", icon: "mdi:lifebuoy", roles: ["user"] },
 ];
 
 export default function Sidebar({ collapsed }: { collapsed: boolean }) {

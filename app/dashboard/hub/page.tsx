@@ -12,14 +12,10 @@ const modules = [
   { label: "Passport", href: "/dashboard/verify/passport", icon: "mdi:passport" },
   { label: "MCA", href: "/dashboard/verify/mca", icon: "mdi:domain" },
   { label: "Bank", href: "/dashboard/verify/bank", icon: "mdi:bank" },
-  { label: "All-in-One", href: "/dashboard/verify/all-in-one", icon: "mdi:vector-combine" },
-  { label: "Bulk Upload", href: "/dashboard/bulk-upload", icon: "mdi:upload" },
   { label: "Reports", href: "/dashboard/reports", icon: "mdi:file-chart" },
   { label: "Billing", href: "/dashboard/billing", icon: "mdi:credit-card-outline" },
-  { label: "Integrations", href: "/dashboard/integrations", icon: "mdi:puzzle-outline" },
   { label: "Notifications", href: "/dashboard/notifications", icon: "mdi:bell-outline" },
   { label: "Settings", href: "/dashboard/settings", icon: "mdi:cog-outline" },
-  { label: "Support", href: "/dashboard/support", icon: "mdi:lifebuoy" },
 ];
 
 export default function Hub() {
