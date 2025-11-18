@@ -26,6 +26,15 @@ const nextConfig: NextConfig = {
     ],
   },
   allowedDevOrigins: ['app-cosmic.com', '*.app-cosmic.com', 'vibecode.net', '*.vibecode.net'],
+  async redirects() {
+    return [
+      {
+        source: '/help/faq',
+        destination: '/help',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

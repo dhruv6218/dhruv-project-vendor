@@ -3,9 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
-
-const ORANGE = "#F97316";
-const NAVY = "#1E3A8A";
+import { Button } from "./ui/Button";
 
 export type HeroData = {
   headline?: string;
@@ -42,23 +40,18 @@ export default function HeroSection({ data }: { data: HeroData }) {
           {(data.primaryCta || data.secondaryCta) && (
             <div className="flex flex-wrap items-center gap-3">
               {data.primaryCta && (
-                <Link
-                  href={data.primaryCta.href}
-                  className="text-sm px-4 py-2 rounded-full text-white"
-                  style={{ background: `linear-gradient(135deg, ${ORANGE}, ${NAVY})` }}
-                  aria-label={data.primaryCta.label}
-                >
-                  <span>{data.primaryCta.label}</span>
-                </Link>
+                <Button asChild>
+                  <Link href={data.primaryCta.href} aria-label={data.primaryCta.label}>
+                    {data.primaryCta.label}
+                  </Link>
+                </Button>
               )}
               {data.secondaryCta && (
-                <Link
-                  href={data.secondaryCta.href}
-                  className="text-sm px-4 py-2 rounded-full border border-neutral-300 hover:-translate-y-0.5 transition"
-                  aria-label={data.secondaryCta.label}
-                >
-                  <span>{data.secondaryCta.label}</span>
-                </Link>
+                <Button variant="outline" asChild>
+                  <Link href={data.secondaryCta.href} aria-label={data.secondaryCta.label}>
+                    {data.secondaryCta.label}
+                  </Link>
+                </Button>
               )}
             </div>
           )}

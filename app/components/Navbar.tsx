@@ -8,8 +8,7 @@ import { cn } from "@/lib/utils";
 import PillNav from "@/app/components/PillNav";
 import { useI18n } from "@/app/components/i18n/LanguageProvider";
 import LanguageSwitcher from "@/app/components/i18n/LanguageSwitcher";
-
-// Primary palette used across the site is defined inline where needed
+import { Button } from "./ui/Button";
 
 function useOutsideClick(ref: React.RefObject<HTMLDivElement>, onClose: () => void) {
   useEffect(() => {
@@ -110,7 +109,7 @@ export default function Navbar() {
               pillTextColor="#0F172A"
             />
 
-            <Dropdown label={t("nav.help")} items={[{ label: "FAQ", href: "/help/faq" }]} />
+            <Dropdown label={t("nav.help")} items={[{ label: "FAQ", href: "/help" }]} />
             <Dropdown label={t("nav.testimonials")} items={[{ label: "All Testimonials", href: "/testimonials" }, { label: "Submit Testimonial", href: "/testimonials/submit" }]} />
             <Dropdown
               label={t("nav.legal")}
@@ -127,13 +126,11 @@ export default function Navbar() {
           {/* Right: Actions */}
           <div className="hidden md:flex items-center justify-end gap-2 sm:gap-3 flex-1 min-w-0">
             <LanguageSwitcher />
-            <Link
-              href="/dashboard"
-              className="text-sm px-3 py-2 rounded-full border border-neutral-200/70 hover:-translate-y-0.5 transition bg-white text-[#0F172A]"
-              aria-label="Go to dashboard"
-            >
-              <span>{t("nav.dashboard")}</span>
-            </Link>
+            <Button variant="outline" size="sm" asChild className="bg-white text-[#0F172A]">
+              <Link href="/dashboard" aria-label="Go to dashboard">
+                {t("nav.dashboard")}
+              </Link>
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -161,7 +158,7 @@ export default function Navbar() {
               <Link href="/service" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Service</Link>
               <Link href="/contact" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Contact</Link>
               <Link href="/about" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>About</Link>
-              <Link href="/help/faq" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>FAQ</Link>
+              <Link href="/help" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>FAQ</Link>
               <Link href="/testimonials" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Testimonials</Link>
               <Link href="/testimonials/submit" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Submit Testimonial</Link>
               <div className="h-px my-2 w-full bg-neutral-200" />
@@ -175,7 +172,9 @@ export default function Navbar() {
               <Link href="/legal/cancellation" className="px-2 py-2 text-sm" onClick={() => setMobileOpen(false)}>Cancellation Policy</Link>
               <div className="flex items-center justify-between pt-3">
                 <div className="flex gap-2 ml-auto">
-                  <Link href="/dashboard" onClick={() => setMobileOpen(false)} className="text-sm px-3 py-2 rounded-full border border-neutral-200/70 bg-white text-[#0F172A]">Dashboard</Link>
+                  <Button variant="outline" size="sm" asChild className="bg-white text-[#0F172A]">
+                    <Link href="/dashboard" onClick={() => setMobileOpen(false)}>Dashboard</Link>
+                  </Button>
                 </div>
               </div>
             </div>

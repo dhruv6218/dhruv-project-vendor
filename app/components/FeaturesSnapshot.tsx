@@ -3,7 +3,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
-import { useTheme } from "@/app/components/ThemeProvider";
 import Link from "next/link";
 
 const items = [
@@ -24,11 +23,6 @@ const items = [
     desc: "SAML SSO, SCIM provisioning, IP restrict, granular RBAC, session policies—GDPR/CCPA tools built-in. Audit logs for every touchpoint.",
   },
   {
-    icon: "mdi:account-group",
-    title: "Role-Based Team Collaboration",
-    desc: "Invite managers, admins, service teams with activity tracking, approvals, live chat, and dashboards.",
-  },
-  {
     icon: "material-symbols:receipt",
     title: "Seamless Payments & Integration",
     desc: "Automated invoices, easy plan changes, token management—complete billing transparency.",
@@ -36,9 +30,8 @@ const items = [
 ];
 
 export default function FeaturesSnapshot() {
-  const { theme } = useTheme();
-  const fg = theme === "light" ? "#0F172A" : "#FFFFFF";
-  const sub = theme === "light" ? "#475569" : "#CBD5E1";
+  const fg = "#0F172A";
+  const sub = "#475569";
 
   return (
     <section className="mx-auto max-w-7xl px-4 md:px-6 py-10">

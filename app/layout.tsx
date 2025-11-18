@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
-import { ThemeProvider } from "@/app/components/ThemeProvider";
 import FloatingWhatsApp from "@/app/components/FloatingWhatsApp";
 import { Geist } from "next/font/google";
 import { LanguageProvider } from "@/app/components/i18n/LanguageProvider";
@@ -28,22 +27,16 @@ export default function RootLayout({
   children
 }: Readonly<{children: React.ReactNode;}>) {
   return (
-    <html data-editor-id="app/layout.tsx:27:5" lang="en" className={`${primaryFont.className} ${headingsFont.variable}`}>
-      <body data-editor-id="app/layout.tsx:31:7" className="antialiased">
-        <main data-editor-id="app/layout.tsx:32:9" className="min-h-screen">
-          <ThemeProvider>
+    <html lang="en" className={`${primaryFont.className} ${headingsFont.variable}`}>
+      <body className="antialiased">
+        <main className="min-h-screen">
             <LanguageProvider>
               <Navbar />
               {children}
               <FloatingWhatsApp />
               <Footer />
             </LanguageProvider>
-          </ThemeProvider>
         </main>
-        {process.env.VISUAL_EDITOR_ACTIVE === 'true' &&
-        <script data-editor-id="app/layout.tsx:50:9" src="/editor.js" async />
-        }
       </body>
     </html>);
-
 }

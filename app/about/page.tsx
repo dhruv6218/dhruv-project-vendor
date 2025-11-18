@@ -3,9 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import ElectricBorder from "@/app/components/ElectricBorder";
-
-const ORANGE = "#F97316";
-const NAVY = "#1E3A8A";
+import { ORANGE } from "@/lib/constants";
+import { Button } from "@/app/components/ui/Button";
 
 export default function AboutPage() {
   return (
@@ -71,7 +70,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder */}
-      <section className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="mt-6">
         <ElectricBorder color={ORANGE} speed={1} chaos={0.5} thickness={2} style={{ borderRadius: 16 }}>
           <div className="p-5 rounded-2xl bg-white/60 backdrop-blur">
             <h2 className="text-lg font-medium">Meet Our Founder</h2>
@@ -79,20 +78,6 @@ export default function AboutPage() {
               Dhruv, Founder & CEO – the visionary behind Ravono, passionate about automation, AI, and secure SaaS solutions. Committed to building a platform that
               reduces fraud risk while providing a seamless experience globally.
             </p>
-          </div>
-        </ElectricBorder>
-        {/* Flagship */}
-        <ElectricBorder color={ORANGE} speed={1} chaos={0.5} thickness={2} style={{ borderRadius: 16 }}>
-          <div className="p-5 rounded-2xl bg-white/60 backdrop-blur">
-            <h2 className="text-lg font-medium">Our Flagship Service – Manual Vendor Verification</h2>
-            <p className="text-base text-[#475569] mt-2">
-              For clients needing 100% human‑verified reports, we offer ₹24,999 manual verification service covering PAN, GST, Aadhaar, Passport, MCA/CIN/DIN, and Bank verifications.
-              SLA‑backed with progress tracking, AI‑assisted insights, and PDF delivery. Perfect for enterprises with high‑value vendor onboarding requirements.
-            </p>
-            <div className="mt-3 flex flex-wrap gap-3">
-              <Link href="/contact" className="text-sm px-4 py-2 rounded-full text-white" style={{ background: `linear-gradient(135deg, ${ORANGE}, ${NAVY})` }}>Order Manual Verification</Link>
-              <Link href="/pricing" className="text-sm px-4 py-2 rounded-full border border-neutral-200/70">View Plans</Link>
-            </div>
           </div>
         </ElectricBorder>
       </section>
@@ -118,8 +103,12 @@ export default function AboutPage() {
         <h3 className="text-xl font-medium">Join Thousands of Businesses Using Ravono Vendor Compliance</h3>
         <p className="text-base text-[#475569] mt-1">Start free today or explore our enterprise features to streamline vendor onboarding and compliance.</p>
         <div className="mt-4 flex items-center justify-center gap-3">
-          <Link href="/pricing" className="text-sm px-4 py-2 rounded-full text-white" style={{ background: `linear-gradient(135deg, ${ORANGE}, ${NAVY})` }}>Try Free</Link>
-          <Link href="/contact" className="text-sm px-4 py-2 rounded-full border border-neutral-200/70">Schedule Demo</Link>
+          <Button asChild>
+            <Link href="/pricing">Try Free</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/contact">Schedule Demo</Link>
+          </Button>
         </div>
       </section>
     </div>

@@ -3,17 +3,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useTheme } from "@/app/components/ThemeProvider";
 import Lightning from "@/app/components/Lightning";
-
-const ORANGE = "#F97316";
-const NAVY = "#1E3A8A";
-const TEXT = "#0F172A";
+import { TEXT } from "@/lib/constants";
+import { Button } from "./ui/Button";
 
 export default function Hero() {
-  const { theme } = useTheme();
-  const fg = theme === "light" ? TEXT : "#FFFFFF";
-  const sub = theme === "light" ? "#475569" : "#CBD5E1";
+  const fg = TEXT;
+  const sub = "#475569";
 
   return (
     <section className="relative overflow-hidden">
@@ -42,17 +38,12 @@ export default function Hero() {
             </motion.p>
 
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <Link href="/pricing" className="inline-block" aria-label="Start Free">
-                <motion.span
-                  whileHover={{ y: -2 }}
-                  transition={{ duration: 0.2 }}
-                  className={`px-5 py-3 rounded-[16px] text-sm md:text-base text-white shadow`} 
-                  style={{ background: `linear-gradient(135deg, ${ORANGE}, ${NAVY})` }}
-                >
-                  Start Free
-                </motion.span>
-              </Link>
-              <CTA href="/contact?type=sales" label="Contact Sales" />
+              <Button size="lg" asChild>
+                <Link href="/pricing">Start Free</Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link href="/contact?type=sales">Contact Sales</Link>
+              </Button>
             </div>
           </div>
 
@@ -84,24 +75,5 @@ export default function Hero() {
         <Lightning hue={35} xOffset={0} speed={1} intensity={1} size={1} />
       </div>
     </section>
-  );
-}
-
-function CTA({ href, label, primary }: { href: string; label: string; primary?: boolean }) {
-  return (
-    <Link href={href} className="inline-block">
-      <motion.span
-        whileHover={{ y: -2 }}
-        transition={{ duration: 0.2 }}
-        className={`px-5 py-3 rounded-[16px] text-sm md:text-base ${primary ? 'text-white' : 'border'}`}
-        style={{
-          background: primary ? `linear-gradient(135deg, ${ORANGE}, ${NAVY})` : undefined,
-          borderColor: primary ? undefined : NAVY,
-          color: primary ? "#fff" : NAVY,
-        }}
-      >
-        {label}
-      </motion.span>
-    </Link>
   );
 }

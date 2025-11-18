@@ -5,9 +5,8 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import React from "react";
 import { TRUSTED_LOGOS } from "@/app/components/home/sampleData";
-
-const ORANGE = "#F97316";
-const NAVY = "#1E3A8A";
+import { ORANGE, NAVY } from "@/lib/constants";
+import { Button } from "../ui/Button";
 
 export default function HeroRavono() {
   return (
@@ -43,31 +42,24 @@ export default function HeroRavono() {
 
           {/* CTAs */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <Link
-              href="/dashboard"
-              className="text-sm px-4 py-2 rounded-2xl text-white shadow-[0_12px_40px_rgba(249,115,22,0.35)] hover:-translate-y-0.5 transition inline-flex items-center gap-2"
-              aria-label="Start Free"
-              style={{ background: `linear-gradient(135deg, ${ORANGE}, ${NAVY})` }}
-            >
-              <Icon icon="material-symbols:rocket-rounded" width={18} />
-              <span>Start Free</span>
-            </Link>
-            <Link
-              href="/features"
-              className="text-sm px-4 py-2 rounded-2xl border border-neutral-200/80 bg-white hover:-translate-y-0.5 transition inline-flex items-center gap-2"
-              aria-label="Explore Features"
-            >
-              <Icon icon="mdi:login" width={18} />
-              <span>Explore Features</span>
-            </Link>
-            <Link
-              href="/service"
-              className="text-sm px-4 py-2 rounded-2xl bg-[#1E3A8A] text-white hover:-translate-y-0.5 transition inline-flex items-center gap-2 shadow-[0_10px_30px_rgba(30,58,138,0.35)]"
-              aria-label="View Services"
-            >
-              <Icon icon="mdi:briefcase-outline" width={18} />
-              <span>View Services</span>
-            </Link>
+            <Button asChild className="shadow-[0_12px_40px_rgba(249,115,22,0.35)]">
+              <Link href="/dashboard" aria-label="Start Free">
+                <Icon icon="material-symbols:rocket-rounded" width={18} className="mr-2" />
+                Start Free
+              </Link>
+            </Button>
+            <Button variant="outline" asChild>
+              <Link href="/features" aria-label="Explore Features">
+                <Icon icon="mdi:login" width={18} className="mr-2" />
+                Explore Features
+              </Link>
+            </Button>
+            <Button asChild className="bg-[#1E3A8A] shadow-[0_10px_30px_rgba(30,58,138,0.35)]" style={{ background: NAVY }}>
+              <Link href="/service" aria-label="View Services">
+                <Icon icon="mdi:briefcase-outline" width={18} className="mr-2" />
+                View Services
+              </Link>
+            </Button>
           </div>
 
           {/* Trusted logos (text-rendered for performance and consistency) */}

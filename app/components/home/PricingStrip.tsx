@@ -4,9 +4,8 @@ import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { PRICING } from "@/app/components/home/sampleData";
 import { motion } from "framer-motion";
-
-const ORANGE = "#F97316";
-const NAVY = "#1E3A8A";
+import { ORANGE } from "@/lib/constants";
+import { Button } from "../ui/Button";
 
 export default function PricingStrip() {
   const [currency, setCurrency] = useState<"INR" | "USD">("INR");
@@ -52,10 +51,10 @@ export default function PricingStrip() {
                   </li>
                 ))}
               </ul>
-              <button className="mt-4 w-full text-sm px-4 py-2 rounded-2xl text-white inline-flex items-center justify-center gap-2 hover:-translate-y-0.5 transition shadow" style={{ background: `linear-gradient(135deg, ${ORANGE}, ${NAVY})` }} aria-label={p.cta}>
-                <Icon icon="mdi:rocket-launch" width={18} />
-                <span>{p.cta}</span>
-              </button>
+              <Button className="mt-4 w-full" aria-label={p.cta}>
+                <Icon icon="mdi:rocket-launch" width={18} className="mr-2" />
+                {p.cta}
+              </Button>
             </motion.article>
           ))}
         </div>

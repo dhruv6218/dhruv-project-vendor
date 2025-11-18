@@ -2,17 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
-import { useTheme } from "@/app/components/ThemeProvider";
-
-// color tokens available globally via inline styles where needed
 
 export default function Footer() {
-  const { theme } = useTheme();
-  const baseBg = theme === "light" ? "bg-white" : "bg-[#0B1220]";
-  const baseText = theme === "light" ? "text-[#0F172A]" : "text-white";
-  const subText = theme === "light" ? "text-[#475569]" : "text-[#CBD5E1]";
-  const borderCol = theme === "light" ? "border-neutral-200/70" : "border-white/10";
+  const baseBg = "bg-white";
+  const baseText = "text-[#0F172A]";
+  const subText = "text-[#475569]";
+  const borderCol = "border-neutral-200/70";
 
   return (
     <footer className={`${baseBg} ${baseText} border-t ${borderCol}`}>
@@ -46,8 +41,6 @@ export default function Footer() {
           <ul className={`mt-3 space-y-2 text-sm ${subText}`}>
             <li><Link href="/features">Features</Link></li>
             <li><Link href="/pricing">Pricing</Link></li>
-            <li><Link href="/service">Services</Link></li>
-            <li><Link href="/manager">Manager</Link></li>
           </ul>
         </div>
 

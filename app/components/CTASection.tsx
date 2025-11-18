@@ -1,11 +1,8 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
-
-const ORANGE = "#F97316";
-const NAVY = "#1E3A8A";
+import { Button } from "./ui/Button";
 
 export default function CTASection() {
   return (
@@ -14,26 +11,14 @@ export default function CTASection() {
         <h3 className="text-xl" style={{ fontFamily: "var(--font-geist)", fontWeight: 600 }}>Start your journey. Work with perfection. Manual relief available.</h3>
         <p className="text-sm mt-1 text-[#475569]">Our service team supports every step.</p>
         <div className="mt-4 flex flex-col sm:flex-row gap-3">
-          <GradientLink href="/pricing" label="Get Started Free" />
-          <OutlineButton href="/contact?type=sales" label="Talk to Sales" />
+          <Button asChild>
+            <Link href="/pricing">Get Started Free</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/contact?type=sales">Talk to Sales</Link>
+          </Button>
         </div>
       </div>
     </section>
-  );
-}
-
-function GradientLink({ href, label }: { href: string; label: string }) {
-  return (
-    <Link href={href} className="inline-block" aria-label={label}>
-      <motion.span whileHover={{ y: -2 }} transition={{ duration: 0.2 }} className="px-4 py-2 rounded-full text-sm text-white" style={{ background: `linear-gradient(135deg, ${ORANGE}, ${NAVY})` }}>{label}</motion.span>
-    </Link>
-  );
-}
-
-function OutlineButton({ href, label }: { href: string; label: string }) {
-  return (
-    <Link href={href} className="inline-block">
-      <motion.span whileHover={{ y: -2 }} transition={{ duration: 0.2 }} className="px-4 py-2 rounded-full text-sm border border-neutral-200/70">{label}</motion.span>
-    </Link>
   );
 }
